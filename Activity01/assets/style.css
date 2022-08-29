@@ -1,0 +1,116 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* LOGIN & REGISTER PAGE CSS */
+.login-container{
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    max-width: 275px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 50px auto;
+}
+
+.title{
+    font-family: Arial, Helvetica, sans-serif;
+    padding:25px;
+    color: white;
+    text-align: center;
+    background-color: blue;
+    border-radius: 10px 10px 0 0;
+    font-size: x-large;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #5756cd 0%, #bb50c1 100%);
+}
+
+.inputs{
+    padding:15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs > input{
+    padding: 10px 15px;
+    border-radius: 20px ;
+    outline: none;
+    box-shadow: none;
+    margin: 6px 0;
+    color: #333;
+    transition: all 0.3s;
+    border: 1px solid rgba(128, 128, 128, 0.199);
+}
+
+.inputs > input:focus{
+    outline: none;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    transition: all 0.3s;
+}
+
+.info1{
+    display: flex;
+    font-size: small;
+    justify-content: space-between;
+    margin: 10px 5px;
+}
+
+.info2{
+    display: flex;
+    font-size: small;
+    margin: 10px auto;
+}
+
+a{
+    color: rgb(8, 50, 240);
+    margin: 0 3px;
+}
+
+.btn{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    margin: 15px 5px 10px;
+    font-size: medium;
+    background: linear-gradient(to right, #5756cd 0%, #bb50c1 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.btn:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    transition: all 1s ease;
+}
+
+
+/* INDEX PAGE */
+
+.index-title{
+    text-align: center;
+    padding: 10px;
+}
+
+.btn2{
+    padding: 10px 40px;
+    border-radius: 20px;
+    border: none;
+    margin: 15px 5px 10px;
+    font-size: medium;
+    background: linear-gradient(to right, #5756cd 0%, #bb50c1 100%);
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.index-main{
+    margin: 50px auto;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+    padding: 30px;
+    border-radius: 20px;
+}
