@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>File upload</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .main-container {
+            max-width: 800px;
+            margin: 50px auto;
+        }
+
+        .title {
+            padding: 10px;
+            font-size: small;
+            padding: 10px 15px;
+            background-color: #082768;
+            color: white;
+        }
+
+        .form-controller {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 40px;
+        }
+
+        .caption {
+            padding: 5px;
+            margin: 5px 0 10px;
+            border: none;
+            border-bottom: 1px solid black;
+            transition: all 0.5s;
+        }
+
+        .caption:focus {
+            border: 1px solid rgb(177, 176, 176);
+            outline: none;
+            transition: all 0.5s;
+        }
+
+        .file-input {
+            margin: 20px 10px;
+        }
+
+        .file-input::file-selector-button {
+            font-weight: bold;
+            background-color: gray;
+            color: white;
+            padding: 10px 5px;
+            border: thin solid grey;
+            border-radius: 3px;
+        }
+
+        .upd-btn {
+            background-color: #26a59a;
+            border: none;
+            padding: 10px 15px;
+            color: white;
+            font-weight: 600;
+            max-width: 200px;
+        }
+
+        .gallery {
+            color: rgb(5, 5, 5);
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            margin: 10px;
+        }
+
+        .pictures {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 30px;
+        }
+
+        .pictures>div {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+        }
+
+        .pictures label {
+            font-size: small;
+            color: rgb(59, 59, 59);
+        }
+        .warn{
+            margin: 20px 0;
+            color: rgb(36, 36, 36);
+        }
+        .pictures img {
+            width: 175px;
+            height: 175px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 5px 3px;
+            object-fit: cover;
+            transition: all 0.2s ease-out;
+        }
+
+        .pictures img:hover {
+            transform: scale(2);
+            object-fit: contain;
+            border-radius: 20px;
+            transition: all 0.2s ease-out;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <h2 class="title">Nodejs file upload with MongoDB</h2>
+
+        <!-- Form part -->
+        <section class="form-container">
+            <form action="/upload" class="form-controller" method="post" enctype="multipart/form-data">
+                <input type="file" class="file-input" name="photo">
+                <input type="text" placeholder="Caption" class="caption" name="cap">
+                <button type="submit" class="upd-btn">UPLOAD <i class="fi fi-bs-angle-small-right"></i></button>
+            </form>
+        </section>
+        <hr>
+
+        <!-- Gallery part -->
+        <section class="gallery">
+            <h2>
+                Photo Gallery
+            </h2>
+            <% if(!(data.length)){%>
+                <pre class="warn">No photos! Upload photos to display</pre>
+            <%}else{%>
+            <div class="pictures">
+                <% data.forEach((photo)=>{%>
+                    <div>
+                        <img src='/uploads/<%=photo.imgname%>' alt="<%=photo.caption%>" />
+                        <label>
+                            <%=photo.caption%>
+                        </label>
+                    </div>
+                    <% }) %>
+            </div>
+            <%}%>
+        </section>
+    </div>
+</body>
+
+</html>
