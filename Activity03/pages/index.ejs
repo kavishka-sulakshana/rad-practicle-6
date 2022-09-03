@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File upload</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body{
+      background-color: #8f8f8f;
+      color: #4d4d4d;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .form-main {
+      margin: 50px auto;
+      width: 450px;
+      border-radius: 10px;
+      background-color: white;
+    }
+    .title{
+      padding: 15px;
+      font-weight: 600;
+      background-color: white;
+      border-radius: 10px 10px 0 0 ;
+      border-bottom: 2px solid rgba(65, 65, 65, 0.253);
+    }
+    .mid-part{
+      padding: 15px;
+    }
+    .inp-section{
+      display: flex;
+      flex-direction: column;
+      margin: 5px 0;
+    }
+
+    .inp-section > input{
+      padding: 10px;
+      border: 1px solid rgba(128, 128, 128, 0.219);
+      border-radius: 5px;
+    }
+    .inp-section > input:focus{
+      outline: none;
+    }
+    .file-box{
+      position: relative;
+      border: 2px dashed rgba(128, 128, 128, 0.212);
+      padding: 80px 30px;
+
+      border-radius: 10px;
+    }
+    .file-box input{
+      position: absolute;
+      z-index: 2;
+      width: 100%;
+      opacity: 0;
+    }
+    .file-box-inside{
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 25%;
+      left: 30%;
+      color: rgba(46, 46, 46, 0.514);
+    }
+    .blue{
+      color: rgb(25, 113, 247);
+    }
+    .bottom-part{
+      margin: 3px;
+      display: flex;
+      justify-content: space-between;
+      color: #8f8f8f;
+    }
+    .sub-btn{
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: none;
+      background-color: #2563eb;
+      color: white;
+      border-radius: 5px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <form enctype="multipart/form-data" action="/upload" method="post" class="form-main">
+    <div class="title">Add document</div>
+    <div class="mid-part">
+      <div class="inp-section">
+        <label>Title</label>
+        <input type="text" name="title" />
+      </div>
+      <div class="inp-section">
+        <label>Attachments</label>
+        <div class="file-box">
+          <input type="file" name="docs" multiple/>
+          <div class="file-box-inside">
+            <span>Attach your files here</span>
+            <span>or</span>
+            <span class="blue">Browse files</span>
+          </div>
+        </div>
+        <div class="bottom-part">
+          <span>Accepted file type : doc only</span>
+          <span>Max 5 files</span>
+          <span>secure</span>
+        </div>
+      </div>
+      <button type="submit" class="sub-btn">Create</button>
+    </div>
+  </form>
+</body>
+
+</html>
